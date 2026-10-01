@@ -8,7 +8,7 @@ class Category(models.Model):
         return self.name
 
 class Product(models.Model):
-    categories = models.ManyToManyField("Category")
+    categories = models.ManyToManyField("Category", related_name="products")
     
     name = models.CharField(max_length=50)
     price = models.DecimalField(max_digits=10, decimal_places=2)
